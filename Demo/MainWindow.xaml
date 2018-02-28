@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Demo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="720" Width="405">
     <Grid>
-        
+        <Label x:Name="lblTitle" Content="" Height="60" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFD84141" Foreground="White" FontSize="28"/>
+        <DockPanel Margin="0,0,0,0" Height="60" VerticalAlignment="Bottom" LastChildFill="False" HorizontalAlignment="Center">
+            <Button x:Name="btnChallengeFeed" Content="📰" Height="60" VerticalAlignment="Top" Width="75" Margin="5,0" Click="btnChallengeFeed_Click" FontSize="25"/>
+            <Button Content="Button" Height="60" VerticalAlignment="Top" Width="75" Margin="5,0"/>
+            <Button Content="Button" Height="60" VerticalAlignment="Top" Width="75" Margin="5,0"/>
+        </DockPanel>
+        <StackPanel x:Name="spContent" Margin="0,60,0,65" />
+
     </Grid>
 </Window>

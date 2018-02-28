@@ -20,9 +20,33 @@ namespace Demo
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string TitleLabel
+        {
+            get
+            {
+                return lblTitle.Content.ToString();
+            }
+            set
+            {
+                lblTitle.Content = value;
+            }
+        }
+
+        Youth_ChallengeFeed youth_ChallengeFeed = new Youth_ChallengeFeed();
+
         public MainWindow()
         {
             InitializeComponent();
+
+            spContent.Children.Add(youth_ChallengeFeed);
+            youth_ChallengeFeed.Load();
+        }
+
+        private void btnChallengeFeed_Click(object sender, RoutedEventArgs e)
+        {
+            spContent.Children.Clear();
+            spContent.Children.Add(youth_ChallengeFeed);
+            youth_ChallengeFeed.Load();
         }
     }
 }
