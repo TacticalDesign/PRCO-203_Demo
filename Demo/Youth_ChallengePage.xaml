@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Demo"
              mc:Ignorable="d" 
-             d:DesignHeight="564" d:DesignWidth="405">
+             d:DesignHeight="574" d:DesignWidth="405">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="56*"/>

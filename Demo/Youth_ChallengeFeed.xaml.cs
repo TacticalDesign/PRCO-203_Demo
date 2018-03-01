@@ -29,21 +29,38 @@ namespace Demo
 
         public void Load()
         {
-            spFeed.Children.Clear();
-
             ((MainWindow)Application.Current.MainWindow).TitleLabel = "Challenge Feed";
 
+            PopulateFeed("http://localhost/DP/api/GetChallenges.php?find=all");
+        }
+
+        private void TbxSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                if (tbxSearch.Text.Length == 0)
+                    PopulateFeed("http://localhost/DP/api/GetChallenges.php?find=all");
+                else
+                    PopulateFeed("http://localhost/DP/api/GetChallenges.php?search=" + tbxSearch.Text.Replace('&', '|') + "&where=adminApproved:true");
+            }
+        }
+
+        private void PopulateFeed(string url)
+        {
             using (WebClient wc = new WebClient())
             {
                 wc.DownloadStringCompleted += (ss, ee) =>
                 {
                     Challenge[] challenges = JsonConvert.DeserializeObject<Challenge[]>(ee.Result);
+
+                    spFeed.Children.Clear();
                     foreach (Challenge challenge in challenges)
                     {
                         spFeed.Children.Add(challenge);
                     }
                 };
-                wc.DownloadStringAsync(new Uri("http://localhost/DP/api/GetChallenges.php?find=all"));
+
+                wc.DownloadStringAsync(new Uri(url));
             }
         }
     }

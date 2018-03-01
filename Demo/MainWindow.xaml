@@ -7,13 +7,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="405">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <Label x:Name="lblTitle" Content="" Height="60" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFD84141" Foreground="White" FontSize="28"/>
-        <DockPanel Margin="0,0,0,0" Height="60" VerticalAlignment="Bottom" LastChildFill="False" HorizontalAlignment="Center">
+        <DockPanel Margin="71,0" Height="60" VerticalAlignment="Bottom" LastChildFill="False" HorizontalAlignment="Center" Grid.Row="2">
             <Button x:Name="btnChallengeFeed" Content="📰" Height="60" VerticalAlignment="Top" Width="75" Margin="5,0" Click="btnChallengeFeed_Click" FontSize="25"/>
             <Button Content="Button" Height="60" VerticalAlignment="Top" Width="75" Margin="5,0"/>
             <Button Content="Button" Height="60" VerticalAlignment="Top" Width="75" Margin="5,0"/>
         </DockPanel>
-        <StackPanel x:Name="spContent" Margin="0,60,0,65" />
+        <StackPanel x:Name="spContent" Grid.Row="1" Margin="0,0,0,0" />
 
     </Grid>
 </Window>

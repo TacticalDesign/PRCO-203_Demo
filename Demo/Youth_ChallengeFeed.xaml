@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Demo"
              mc:Ignorable="d" 
-             d:DesignHeight="564" d:DesignWidth="405">
+             d:DesignHeight="574" d:DesignWidth="397">
     <Grid>
-        <TextBox Height="60" Margin="10,10,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="25"/>
+        <TextBox x:Name="tbxSearch" Height="60" Margin="10,10,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="25" KeyUp="TbxSearch_KeyUp"/>
         <ScrollViewer Height="515" Margin="10,75,10,0" VerticalScrollBarVisibility="Visible">
             <StackPanel x:Name="spFeed" Margin="0" VerticalAlignment="Top" />
         </ScrollViewer>
